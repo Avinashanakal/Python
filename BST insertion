@@ -17,11 +17,24 @@ def insert(root,node):
         root.left=node
       else:
         insert(root.left,node)
+        
 def inorder(root):
   if root:
     inorder(root.left)
     print(root.value)
     inorder(root.right)
+
+def preorder(root):
+  if root:
+    print(root.value)
+    preorder(root.left)
+    preorder(root.right)
+
+def postorder(root):
+  if root:
+    postorder(root.left)
+    postorder(root.right)
+    print(root.value)
 
 r=Node(50)
 insert(r,Node(30))
@@ -30,4 +43,9 @@ insert(r,Node(40))
 insert(r,Node(70))
 insert(r,Node(60))
 insert(r,Node(80))
+print("In-order Traversal")
 inorder(r)
+print("Pre-order Traversal")
+preorder(r)
+print("Post-order Traversal")
+postorder(r)
